@@ -17,8 +17,7 @@ def get_value(value):
 
 #get the input
 while 1:
-    print("please input the name of comet:")
-    comet = raw_input()
+    comet = raw_input("please enter the name of comet:")
     if len(comet) > 6:
         print("input length is too long!")
     elif not str.isalpha(comet):
@@ -29,8 +28,7 @@ while 1:
         break
 
 while 1:
-    print("please input the name of group:")
-    group = raw_input()
+    group = raw_input("please enter the name of group:")
     if len(group) > 6:
         print("input length is too long!")
     elif not str.isalpha(group):
