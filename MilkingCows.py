@@ -8,7 +8,6 @@ with open('milk2.in', 'r') as f:
         time_table[number1-1][start] = int(time_table[number1-1][start])
         time_table[number1-1][end] = int(time_table[number1-1][end])
         number1 = number1 - 1
-
 time_table.sort()
 milk = [0 for i in range(number2-1)]
 nomilk = [0 for i in range(number2-1)]
@@ -23,7 +22,6 @@ for j in range(1,number2):
         nomilk[j-1] = time_table[j][start] - time_table[j-1][end]
 milk.sort(reverse = True)
 nomilk.sort(reverse = True)
-print milk,nomilk
 with open('milk2.out', 'w') as f:
     f.write(str(milk[0]))
     f.write(' ')
