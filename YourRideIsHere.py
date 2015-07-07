@@ -1,45 +1,21 @@
-#set the dist
-createVar = locals()
-listTemp = range(1,27)
-key = 65
-for value in listTemp:
-    createVar[chr(key)] = value
-    key = key + 1
-
 #get the value
 def get_value(value):
     product = 1
     for item in value:
-        product = product * ord(item)
-
+        product = product * (ord(item)-64)
     answer = product%47
     return answer
 
-#get the input
-while 1:
-    comet = raw_input("please enter the name of comet:")
-    if len(comet) > 6:
-        print("input length is too long!")
-    elif not str.isalpha(comet):
-        print("input format must be alpha!")
-    elif not str.isupper(comet):
-        print("input format must be upper!")
-    else:
-        break
-
-while 1:
-    group = raw_input("please enter the name of group:")
-    if len(group) > 6:
-        print("input length is too long!")
-    elif not str.isalpha(group):
-        print("input format must be alpha!")
-    elif not str.isupper(group):
-        print("input format must be upper!")
-    else:
-        break
+i = 0
+number = ['0', '0']
+with open('ride.in','r') as f1:
+    for line in f1.readlines():
+        number[i] = line
+        i = i+1
 
 #get the answer
-if get_value(comet) == get_value(group):
-    print("GO")
-else:
-    print("STAY")
+with open('ride.out', 'w') as f2:
+    if get_value(number[0]) == get_value(number[1]):
+        f2.write("GO")
+    else:
+        f2.write("STAY")
